@@ -18,7 +18,7 @@ The install script creates a set of test tables created in the pgparttimejob sch
 psql> select parent.relname as table_name, child.relname as partition_name from pg_inherits join pg_class parent on pg_inherits.inhparent = parent.oid join pg_class child on pginherits.inhrelid = child.oid order by parent.relname, child.relname;
  table_name  |   partition_name   
 -------------+--------------------
-testdaily   | testdaily_20130905
+ testdaily   | testdaily_20130905
  testdaily   | testdaily_20130906
  testdaily   | testdaily_20130907
  testdaily   | testdaily_20130908
