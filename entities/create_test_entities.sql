@@ -4,6 +4,8 @@ create table pgparttimejob.testdaily
     created_at              timestamp without time zone default now()
 )
 ;
+create index testdaily_created_at_idx on pgparttimejob.testdaily (created_at)
+;
 
 create table pgparttimejob.testweekly
 (

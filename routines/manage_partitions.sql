@@ -44,7 +44,10 @@ begin
                         ||  'check ( '
                         ||  'created_at >= '''||part_rec.partition_filter_start||''' and '
                         ||  'created_at < '''||part_rec.partition_filter_end||''') '
-                        ||  ') inherits ('||tab_rec.table_schema||'.'||tab_rec.table_name||' )'
+                        ||  ', '
+                        ||  'like '||tab_rec.table_schema||'.'||tab_rec.table_name||' including indexes ' 
+                        ||  ') '
+                        ||  'inherits ('||tab_rec.table_schema||'.'||tab_rec.table_name||' )'
                         ||  ';';
     
             -- Raise notice 'create table was : %', part_sql;
